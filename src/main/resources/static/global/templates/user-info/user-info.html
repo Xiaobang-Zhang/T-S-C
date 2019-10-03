@@ -1,0 +1,85 @@
+<div class="user-info">
+	<form name="userDetailForm" class="form-horizontal">
+	    <div class="user-header">
+	        <img ng-class="['img-circle', isDetailEditable ?'edit-img' : '']" width="100px" height="100px" ng-src="{{userWithDetail.userDetail.picturePath}}" ng-click="uploadPic()" alt="头像"/>
+	        <input id="userPicFileInput" tabindex="-1" type="file" name="file" accept="image/*" style="visibility: hidden;"/>
+	    </div>
+	
+	    <div ng-class="['form-group', userDetailForm.accountId.$invalid ? 'has-error' : '']">
+		    <label class="col-sm-5 control-label">学（工）号：</label>
+	    	<div class="col-sm-7">
+		        <input name="accountId" type="number" class="form-control" ng-disabled="!isBaseEditable" ng-model="userWithDetail.accountId" required/>
+	    	</div>
+	    </div>
+
+	    <div ng-class="['form-group', userDetailForm.password.$invalid ? 'has-error' : '']" ng-if="isBaseEditable">
+		    <label class="col-sm-5 control-label">密 码：</label>
+	    	<div class="col-sm-7">
+		        <input name="password" type="password" class="form-control" ng-model="userWithDetail.password" required/>
+	    	</div>
+	    </div>
+	    	
+	    <div ng-class="['form-group', userDetailForm.name.$invalid ? 'has-error' : '']">
+		    <label class="col-sm-5 control-label">姓 名：</label>
+	        <div class="col-sm-7">
+		        <input name="name" type="text" class="form-control" ng-disabled="!isBaseEditable" ng-model="userWithDetail.name" placeholder="姓  名" required/>
+	    	</div>
+	    </div>
+	    
+	    <div ng-class="['form-group', userDetailForm.userRole.$invalid ? 'has-error' : '']">
+	        <label class="col-sm-5 control-label">角 色：</label>
+	        <div class="col-sm-7">
+	            <select name="userRole" ng-model="userWithDetail.userRole" ng-disabled="!isBaseEditable" class="form-control" ng-options="role.id as role.displayValue for role in userRoleCategory"  required>
+	            </select>
+	    	</div>
+	    </div>
+	    
+	    <div ng-class="['form-group', userDetailForm.nickname.$invalid ? 'has-error' : '']">
+		    <label class="col-sm-5 control-label" >昵 称：</label>
+	    	<div class="col-sm-7">
+		        <input name="nickname" type="text" class="form-control" ng-disabled="!isDetailEditable" ng-model="userWithDetail.userDetail.nickname" required/>
+	    	</div>
+	    </div>	
+	    
+	    <div class="form-group">
+		    <label class="col-sm-5 control-label" >年 级：</label>
+	    	<div class="col-sm-7">
+		        <input name="grade" type="text" class="form-control" ng-disabled="!isDetailEditable" ng-model="userWithDetail.userDetail.grade"/>
+	    	</div>
+	    </div>
+	    
+	    <div class="form-group">
+		    <label class="col-sm-5 control-label" >生 日：</label>
+	    	<div class="col-sm-7">
+		        <input name="birthday" type="date" class="form-control" ng-disabled="!isDetailEditable" ng-model="userWithDetail.userDetail.birthday" max="{{nowDate | date : 'yyyy-MM-dd'}}"/>
+	    	</div>
+	    </div>
+	
+	    <div class="form-group">
+	        <label class="col-sm-5 control-label">签 名：</label>
+	    	<div class="col-sm-7">
+		        <textarea class="textarea form-control" rows="2" ng-model="userWithDetail.userDetail.signature" ng-disabled="!isDetailEditable"></textarea>
+	    	</div>
+	    </div>
+	    
+	    <div class="form-group" ng-show="isDetailEditable">
+	        <label class="col-sm-5 control-label">创 建 日 期：</label>
+	    	<div class="col-sm-7 form-control-static">
+		        <label class="label label-info">{{userWithDetail.createdDt | date : DATE_FORMAT}}</label>
+	    	</div>
+	    </div>
+	
+	    <div class="form-group" ng-show="isDetailEditable">
+	        <label class="col-sm-5 control-label">上次更新日期：</label>
+	    	<div class="col-sm-7 form-control-static">
+		        <label class="label label-info">{{userWithDetail.userDetail.lastUpdateDt | date : DATE_FORMAT}}</label>
+	    	</div>
+	    </div>
+	    <div class="form-group" ng-show="isDetailEditable">
+	        <label class="col-sm-5 control-label ">上次离线日期：</label>
+	    	<div class="col-sm-7 form-control-static">
+		        <label class="label label-info">{{userWithDetail.lastLeftDt | date : DATE_FORMAT}}</label>
+	    	</div>
+	    </div>
+	</form>
+</div>

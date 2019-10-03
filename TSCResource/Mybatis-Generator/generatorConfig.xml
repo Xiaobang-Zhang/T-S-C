@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+          <classPathEntry
+        location="C:\Users\Maple\.gradle\caches\modules-2\files-2.1\org.postgresql\postgresql\9.4.1212.jre7\7101612950488be0ff6882bcc27aa0f0a4c202dd/postgresql-9.4.1212.jre7.jar" />
+  
+  <context id="TSCTables">
+
+    <jdbcConnection connectionURL="jdbc:postgresql://localhost:5432/TSC" driverClass="org.postgresql.Driver" 
+    	password="123456" userId="postgres" />
+    	
+	 <javaTypeResolver>
+		<property name="forceBigDecimals" value="false" />
+	</javaTypeResolver>
+    	
+    <javaModelGenerator targetPackage="org.maple.tsc.models" targetProject="F:\Codes\spring-development\TSC\src\main\java">
+		<property name="enableSubPackages" value="false" />
+      	<property name="trimStrings" value="true" />
+    </javaModelGenerator>
+    
+    <sqlMapGenerator targetPackage="org.maple.tsc.mappers.resources" targetProject="F:\Codes\spring-development\TSC\src\main\java">
+    	<property name="enableSubPackages" value="false" />
+    </sqlMapGenerator>
+    
+    <javaClientGenerator targetPackage="org.maple.tsc.mappers" targetProject="F:\Codes\spring-development\TSC\src\main\java" type="XMLMAPPER">
+    	<property name="enableSubPackages" value="false" />
+    </javaClientGenerator>
+    <!--  
+    <table tableName="codetable" domainObjectName="CodetableModel" 
+	    enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+	    enableSelectByExample="false" selectByExampleQueryId="false" >
+     	<property name="useActualColumnNames" value="false" />
+		<property name="rootClass" value="BaseModel" />
+    	<generatedKey sqlStatement="JDBC" column="id"></generatedKey>
+    </table>
+    
+    <table tableName="comment" domainObjectName="CommentModel"
+    	enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+	    enableSelectByExample="false" selectByExampleQueryId="false" >
+     	<property name="useActualColumnNames" value="false" />
+		<property name="rootClass" value="BaseModel" />
+		<generatedKey sqlStatement="JDBC" column="id"></generatedKey>
+    </table>
+    
+    <table tableName="course" domainObjectName="CourseModel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+	    enableSelectByExample="false" selectByExampleQueryId="false" >
+     	<property name="useActualColumnNames" value="false" />
+		<property name="rootClass" value="BaseModel" />
+    	<generatedKey sqlStatement="JDBC" column="id"></generatedKey>
+    </table>
+    -->
+    <table tableName="student_course_xref" domainObjectName="StudentCourseXrefModel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+	    enableSelectByExample="false" selectByExampleQueryId="false" >
+     	<property name="useActualColumnNames" value="false" />
+		<property name="rootClass" value="BaseModel" />
+    	<generatedKey sqlStatement="JDBC" column="id"></generatedKey>
+    </table>
+    
+    <table tableName="teacher_course_xref" domainObjectName="TeacherCourseXrefModel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+	    enableSelectByExample="false" selectByExampleQueryId="false" >
+     	<property name="useActualColumnNames" value="false" />
+		<property name="rootClass" value="BaseModel" />
+    	<generatedKey sqlStatement="JDBC" column="id"></generatedKey>
+    </table>
+    <!-- 
+    <table tableName="topic" domainObjectName="TopicModel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+	    enableSelectByExample="false" selectByExampleQueryId="false" >
+     	<property name="useActualColumnNames" value="false" />
+		<property name="rootClass" value="BaseModel" />
+    	<generatedKey sqlStatement="JDBC" column="id"></generatedKey>
+    </table>
+    
+    <table tableName="user" domainObjectName="UserModel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+	    enableSelectByExample="false" selectByExampleQueryId="false" >
+     	<property name="useActualColumnNames" value="false" />
+		<property name="rootClass" value="BaseModel" />
+    	<generatedKey sqlStatement="JDBC" column="id"></generatedKey>
+    </table>
+    
+    <table tableName="user_detail" domainObjectName="UserDetailModel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+	    enableSelectByExample="false" selectByExampleQueryId="false" >
+     	<property name="useActualColumnNames" value="false" />
+		<property name="rootClass" value="BaseModel" />
+    	<generatedKey sqlStatement="JDBC" column="id"></generatedKey>
+    </table>  
+     -->
+  </context>
+</generatorConfiguration>

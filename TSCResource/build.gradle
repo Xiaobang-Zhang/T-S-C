@@ -1,0 +1,9 @@
+buildscript {
+	dependencies {
+		classpath(group: 'org.postgresql', name: 'postgresql', version: "${postgreSQLVersion}")
+	}
+}
+
+plugins {
+    id "org.flywaydb.flyway" version "4.1.2"
+}
